@@ -1,3 +1,19 @@
+# About Bucket List
+BucketList is a sleek and minimal React app built to help you capture your wildest dreams, set meaningful goals, and track your journey toward a more adventurous life. 🌍🚀
+
+💡 Features
+- Add, edit, and remove To Do list items effortlessly
+- Mark items as completed and celebrate your wins
+- Organize your life goals with clean UI and smooth UX
+- Samples page offers ready list for common tasks that can help and inspire you organizing your tasks.
+- Blog offers various tips and tricks for time management and chores handling, even tips for better quality of life.
+
+![App Preview](./public/images/Screenshot%20from%202025-05-22%2017-25-38.png)
+
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
