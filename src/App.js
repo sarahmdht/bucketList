@@ -12,7 +12,7 @@ import Signin from './pages/signin';
 
 function App() {
   return (
-    <>
+    <div className="bg-primary-subtle min-vh-100 p-5">
       <Router>
         <Navbar />
         <Routes>
@@ -25,7 +25,7 @@ function App() {
         <Route path="/signin" element={<Signin />} />
         </Routes>
       </Router>
-    </>
+    </div>
   );
 }
 

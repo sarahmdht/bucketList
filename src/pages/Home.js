@@ -8,7 +8,7 @@ const Home = () => {
         <img src="./images/878468f6aa5661008263224fa6a44ba9.png" alt='Success' width={250} height={250} />
         <div className='mt-5'>
           <h2>Start planning your day:</h2>
-          <input type="text" class="form-control" placeholder="What is in your mind today?" name="start" />
+          <input type="text" className="form-control" placeholder="What is in your mind today?" name="start" />
           <button type='button' className='btn btn-success mt-3 rounded-pill'>Let's Start!</button>
         </div>
       </div>
