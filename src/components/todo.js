@@ -7,8 +7,9 @@ const TodoList = ({ title, initialItems }) => {
       typeof item === 'string' ? { text: item, completed: false } : item
     )
   );
-  const inputRef = useRef();
 
+  // Create items
+  const inputRef = useRef();
   const handleAddTodo = () => {
     const text = inputRef.current.value.trim();
     if (text !== '') {
@@ -17,11 +18,19 @@ const TodoList = ({ title, initialItems }) => {
     }
   };
 
+  // Update the completed tasks
   const done = (index) => {
     const newTodos = [...todos];
     newTodos[index].completed = !newTodos[index].completed;
     setTodos(newTodos);
   };
+
+  // Delete tasks
+  const remove = (index) => {
+    const newTodos = [...todos];
+    newTodos.splice(index, 1);
+    setTodos(newTodos);
+  }
 
   return (
     <div className='border border-2 border-primary p-4 m-2 w-50'>
@@ -29,20 +38,26 @@ const TodoList = ({ title, initialItems }) => {
       <div className='d-flex flex-column justify-content-between' style={{ minHeight: '300px' }}>
         <ul className='flex-grow-1'>
           {todos.map(({ text, completed }, index) => (
-            <li
-              key={index}
-              className={`text-wrap d-flex align-content-center ${completed ? 'text-decoration-line-through text-muted' : ''}`}
-              style={{ cursor: 'pointer' }}
-              onClick={() => done(index)}
-            >
-              💡 {text}
-            </li>
+            <div className='d-flex justify-content-between align-items-center'>
+              <li
+                key={index}
+                className={`text-wrap d-flex align-content-center ${completed ? 'text-decoration-line-through text-muted' : ''}`}
+                style={{ cursor: 'pointer' }}
+                onClick={() => done(index)}
+              >
+                💡 {text}
+              </li>
+              <p
+                className='h2 text-danger'
+                style={{ cursor: 'pointer' }}
+                onClick={() => remove(index)}>x</p>
+            </div>
           ))}
         </ul>
         <div className='d-flex gap-3 align-content-center mt-3'>
-          <input ref={inputRef} placeholder='Enter new tasks...' type="text" className="form-control w-75" />
-          <button className="btn btn-success py-2 rounded-pill" onClick={handleAddTodo}>
-            ➕ Add
+          <input id={`input-${title.replace(/\s+/g, '-')}`} ref={inputRef} placeholder='Enter new tasks...' type="text" className="form-control w-75" name={title} />
+          <button className="btn btn-success py-2 rounded-pill text-nowrap" onClick={handleAddTodo}>
+            ✨ Add
           </button>
         </div>
       </div>
