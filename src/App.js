@@ -11,18 +11,25 @@ import Signin from './pages/signin';
 
 
 function App() {
+  // set pages
+  const pages = [
+    { element: <Home />, path: "" },
+    { element: <Samples />, path: "samples" },
+    { element: <Blog />, path: "blog" },
+    { element: <About />, path: "about" },
+    { element: <ContactUs />, path: "contact-us" },
+    { element: <Register />, path: "register" },
+    { element: <Signin />, path: "signin" }
+  ]
   return (
     <div className="bg-primary-subtle min-vh-100 p-5">
       <Router>
         <Navbar />
         <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/blog" element={<Blog />} />
-        <Route path="/contactus" element={<ContactUs />} />
-        <Route path="/samples" element={<Samples />} />
-        <Route path="/register" element={<Register />} />
-        <Route path="/signin" element={<Signin />} />
+          {pages.map(({ element, path }) => (
+            <Route path={`/${path}`} element={element} key={element} />
+
+          ))}
         </Routes>
       </Router>
     </div>
