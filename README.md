@@ -9,9 +9,7 @@ BucketList is a sleek and minimal React app built to help you capture your wilde
 - Blog offers various tips and tricks for time management and chores handling, even tips for better quality of life.
 
 ![App Preview](./public/images/Screenshot%20from%202025-05-25%2020-02-11.png)
-
-
-
+![App Preview](./public/images/Screenshot%20from%202025-08-01%2012-02-13.png)
 
 
 # Getting Started with Create React App
